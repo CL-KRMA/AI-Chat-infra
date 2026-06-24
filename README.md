@@ -108,8 +108,8 @@ Votre utilisateur AWS doit avoir accès à :
 ### 1. Cloner le projet
 
 ```bash
-git clone https://github.com/CL-KRMA/aws-terraform-config
-cd aws-terraform-config
+git clone https://github.com/CL-KRMA/AI-Chat-infra
+cd AI-Chat-infra
 ```
 
 ### 2. Générer une clé SSH
@@ -376,4 +376,4 @@ Ce projet est libre d'utilisation.
 
 ## 👤 Auteur
 
-Créé pour un cluster K3s avec Ollama — Juin 2026
+Créé Cheick — Juin 2026
