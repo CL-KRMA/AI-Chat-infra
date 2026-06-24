@@ -1,6 +1,6 @@
 # Cluster K3s sur AWS avec Terraform
 
-Ce projet Terraform configure une infrastructure complète pour déployer un cluster Kubernetes K3s sur AWS avec support Ollama (llama3, llava, gemma4).
+Ce projet Terraform configure une infrastructure complète pour déployer un cluster Kubernetes K3s sur AWS pour faire tourner les 3 modèles IA (llama3, llava, gemma4).
 
 ## 📋 Table des matières
 
@@ -19,14 +19,14 @@ Ce projet Terraform configure une infrastructure complète pour déployer un clu
 ## 🎯 Vue d'ensemble
 
 Ce projet Terraform déploie un cluster Kubernetes K3s sur AWS composé de :
-- **1 nœud Master** (contrôleur du cluster + Ollama)
+- **1 nœud Master** (contrôleur du cluster)
 - **2 nœuds Worker** (exécution des workloads applicatifs)
 
 Tous les nœuds utilisent des instances EC2 **r5.xlarge** (4 vCPU, 32GB RAM) avec **50 GB** de stockage SSD chiffré (gp3) et bénéficient d'adresses IP élastiques (EIP) fixes.
 
 ### Pourquoi r5.xlarge ?
 
-Le nœud master fait tourner Ollama avec 3 modèles IA :
+Pour faire tourner les 3 modèles IA :
 
 | Modèle | RAM utilisée |
 |---|---|
@@ -67,7 +67,7 @@ Internet Gateway
 │  │  ┌──────────────────────────────────┐  │ │
 │  │  │ Master (192.168.2.10)            │  │ │
 │  │  │ r5.xlarge — 32GB RAM             │  │ │
-│  │  │ Ollama + K3s control-plane       │  │ │
+│  │  │ K3s control-plane       │  │ │
 │  │  └──────────────────────────────────┘  │ │
 │  │                                        │ │
 │  │  ┌──────────────────────────────────┐  │ │
@@ -293,7 +293,7 @@ kubectl get nodes
 ### Instances EC2
 | Nœud | IP privée | Type | Disque | Rôle |
 |---|---|---|---|---|
-| master | 192.168.2.10 | r5.xlarge | 50GB gp3 chiffré | control-plane + Ollama |
+| master | 192.168.2.10 | r5.xlarge | 50GB gp3 chiffré | control-plane |
 | worker-1 | 192.168.2.11 | r5.xlarge | 50GB gp3 chiffré | worker |
 | worker-2 | 192.168.2.12 | r5.xlarge | 50GB gp3 chiffré | worker |
 
@@ -367,7 +367,6 @@ Normal — AWS a besoin de 5-10 minutes pour initialiser les ressources.
 
 - [Documentation Terraform AWS](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
 - [Documentation K3s](https://docs.k3s.io/)
-- [Documentation Ollama](https://ollama.com/library)
 - [Pricing AWS EC2](https://aws.amazon.com/fr/ec2/pricing/on-demand/)
 
 ## 📝 Licence
