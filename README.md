@@ -372,7 +372,8 @@ Normal — AWS a besoin de 5-10 minutes pour initialiser les ressources.
 
 ## 📝 Licence
 
-Ce projet est libre d'utilisation.
+Ce projet est sous licence MIT.  
+Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ## 👤 Auteur
 
