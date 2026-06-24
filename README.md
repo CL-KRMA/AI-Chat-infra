@@ -376,4 +376,4 @@ Ce projet est libre d'utilisation.
 
 ## 👤 Auteur
 
-Créé Cheick — Juin 2026
+Créé par Cheick — Juin 2026
